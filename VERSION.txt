@@ -1,0 +1,14 @@
+Portal del Colaborador MPS - VERSIÓN WEB
+
+Cambio principal:
+- El Buzón del Colaborador fue adaptado para funcionar con Google Forms.
+- El portal ya puede subirse a GitHub Pages como sitio estático.
+- Ya no depende de servidor Python para recibir mensajes del buzón.
+
+Formulario vinculado:
+https://docs.google.com/forms/d/e/1FAIpQLSewBGHp7c_jRxtkH9OO-62f5FGheH67mSQRC5M9bnCL1MNGZw/viewform?usp=sharing&ouid=113415303447286872352
+
+Pendiente:
+- Subir el contenido del portal a GitHub.
+- Activar GitHub Pages.
+- Probar la liga pública y generar QR definitivo.

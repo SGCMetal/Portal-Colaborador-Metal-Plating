@@ -1,0 +1,32 @@
+GUÍA RÁPIDA - ADMINISTRACIÓN DEL PORTAL DEL COLABORADOR MPS
+
+1. VERSIÓN WEB
+Esta versión está preparada para publicarse en GitHub Pages.
+El portal funciona como sitio estático: HTML, CSS, JavaScript, imágenes y PDFs.
+
+2. BUZÓN DEL COLABORADOR
+El buzón usa Google Forms, no servidor local.
+Liga del formulario:
+https://docs.google.com/forms/d/e/1FAIpQLSewBGHp7c_jRxtkH9OO-62f5FGheH67mSQRC5M9bnCL1MNGZw/viewform?usp=sharing&ouid=113415303447286872352
+
+Las respuestas se revisan desde la hoja de Google Sheets vinculada al formulario.
+Responsables de revisión: RH / SGC / Dirección.
+Frecuencia de revisión: quincenal.
+
+3. COMUNICADOS
+Editar: data/comunicados.csv
+Después ejecutar localmente: scripts/generar_comunicados.py
+Subir nuevamente a GitHub los archivos data/comunicados.csv y data/comunicados.json actualizados.
+Revisión de comunicados: quincenal.
+
+4. DOCUMENTOS
+Colocar PDFs en las carpetas dentro de docs/.
+Actualizar data/documentos.json cuando se agreguen o cambien documentos.
+No publicar dibujos de cliente, planes de control, AMEF, contratos, precios, parámetros críticos ni registros con datos personales.
+
+5. VISTA LOCAL
+Para revisar antes de subir cambios, ejecutar iniciar_portal.bat y abrir http://localhost:8000
+
+6. PUBLICACIÓN
+Subir el contenido de esta carpeta al repositorio de GitHub.
+Activar GitHub Pages desde Settings > Pages.

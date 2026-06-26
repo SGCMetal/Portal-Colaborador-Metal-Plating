@@ -1,0 +1,29 @@
+[
+  {
+    "fecha": "2026-06-26",
+    "titulo": "Bienvenida al Portal del Colaborador MPS",
+    "area": "Todo el personal",
+    "tipo": "Aviso general",
+    "estatus": "Vigente",
+    "mensaje": "Este portal concentrará información de calidad, RH, seguridad y comunicados internos para consulta rápida desde celular.",
+    "archivo": ""
+  },
+  {
+    "fecha": "2026-06-26",
+    "titulo": "Consulta de Política de Calidad",
+    "area": "Todo el personal",
+    "tipo": "Calidad / SGC",
+    "estatus": "Vigente",
+    "mensaje": "La Política de Calidad vigente está disponible en la sección Calidad / SGC y también en el acceso rápido de inicio.",
+    "archivo": "docs/calidad/DC-DIR-003_Politica_Calidad.pdf"
+  },
+  {
+    "fecha": "2026-06-26",
+    "titulo": "Uso obligatorio de gafete",
+    "area": "General",
+    "tipo": "Personal / RH",
+    "estatus": "Informativo",
+    "mensaje": "El gafete deberá portarse durante la jornada y reportarse en caso de daño o extravío.",
+    "archivo": ""
+  }
+]

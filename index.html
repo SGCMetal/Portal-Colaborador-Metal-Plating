@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal del Colaborador MPS</title>
+  <meta name="description" content="Portal del Colaborador MPS: acceso móvil a calidad, RH, seguridad y comunicados.">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-page="inicio">
+  <header class="app-hero energetic creative-home">
+    <div class="hero-deco hero-deco-a"></div>
+    <div class="hero-deco hero-deco-b"></div>
+    <div class="hero-ring hero-ring-a"></div>
+    <div class="hero-ring hero-ring-b"></div>
+    <div class="hero-logo-wrap glow floating">
+      <img src="assets/logo_mps.png" alt="Logo MPS" class="hero-logo">
+    </div>
+    <p class="kicker">Metal Plating y Servicios</p>
+    <h1>Portal del Colaborador MPS</h1>
+    <p class="hero-text">Una forma clara, visual y rápida de consultar documentos, reglas internas, seguridad y avisos importantes.</p>
+    <div class="hero-pills colorful">
+      <span>Rápido</span>
+      <span>Visual</span>
+      <span>Siempre vigente</span>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="primary-policy energetic-card spotlight-card">
+      <div>
+        <p class="tag">Acceso directo</p>
+        <h2>Política de Calidad</h2>
+        <p>Consulta el documento vigente publicado para todo el personal.</p>
+      </div>
+      <div id="politica-destacada" class="destacado-loading">Cargando documento...</div>
+    </section>
+
+    <section class="home-ribbon-grid">
+      <article class="ribbon-card blue">
+        <strong>Documentos controlados</strong>
+        <span>Consulta rápida y ordenada desde celular.</span>
+      </article>
+      <article class="ribbon-card teal">
+        <strong>Navegación simple</strong>
+        <span>Cada tema separado para no perderse.</span>
+      </article>
+      <article class="ribbon-card amber">
+        <strong>Respaldo físico</strong>
+        <span>Siempre puedes acudir al tablero del SGC.</span>
+      </article>
+    </section>
+
+    <section class="menu-section menu-energetic creative-panel">
+      <div class="section-heading no-border">
+        <p class="tag">Menú principal</p>
+        <h2>Explora por sección</h2>
+        <p>Cada sección tiene una identidad visual propia para ubicarte más rápido.</p>
+      </div>
+      <div class="mobile-menu-grid energetic-grid v6-grid">
+        <a class="module-card calidad vivid deluxe" href="calidad.html">
+          <span class="module-icon vivid">★</span>
+          <span class="module-title">Calidad / SGC</span>
+          <span class="module-desc">Política, mapa de procesos y reglas básicas.</span>
+          <span class="module-chip">Entrar</span>
+        </a>
+        <a class="module-card rh vivid deluxe" href="rh.html">
+          <span class="module-icon vivid">👥</span>
+          <span class="module-title">Personal / RH</span>
+          <span class="module-desc">Reglamento, conducta, gafete y áreas comunes.</span>
+          <span class="module-chip">Entrar</span>
+        </a>
+        <a class="module-card seguridad vivid deluxe" href="seguridad.html">
+          <span class="module-icon vivid">⚠</span>
+          <span class="module-title">Seguridad</span>
+          <span class="module-desc">EPP por área, emergencias y evacuación.</span>
+          <span class="module-chip">Entrar</span>
+        </a>
+        <a class="module-card comunicados vivid deluxe" href="comunicados.html">
+          <span class="module-icon vivid">📢</span>
+          <span class="module-title">Comunicados</span>
+          <span class="module-desc">Avisos, campañas 5S, capacitaciones y cambios.</span>
+          <span class="module-chip">Entrar</span>
+        </a>
+        <a class="module-card buzon vivid deluxe" href="buzon.html">
+          <span class="module-icon vivid">💬</span>
+          <span class="module-title">Buzón del Colaborador</span>
+          <span class="module-desc">Sugerencias, quejas, necesidades o comentarios.</span>
+          <span class="module-chip">Entrar</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="mini-section stylish creative-panel">
+      <div class="section-heading">
+        <p class="tag">Últimos avisos</p>
+        <h2>Comunicados recientes</h2>
+      </div>
+      <div id="comunicados-recientes" class="comunicados-lista compact-list"></div>
+      <a class="text-link" href="comunicados.html">Ver todos los comunicados →</a>
+    </section>
+
+    <section class="support-note polished home-note">
+      <strong>Respaldo físico</strong>
+      <span>Si el QR no funciona o no hay internet, consulta el tablero oficial del SGC.</span>
+    </section>
+  </main>
+
+  <nav class="bottom-nav" aria-label="Navegación principal">
+    <a href="index.html" class="bottom-link active">Inicio</a>
+    <a href="calidad.html" class="bottom-link">Calidad</a>
+    <a href="rh.html" class="bottom-link">RH</a>
+    <a href="seguridad.html" class="bottom-link">Seguridad</a>
+    <a href="comunicados.html" class="bottom-link">Avisos</a>
+    <a href="buzon.html" class="bottom-link">Buzón</a>
+  </nav>
+
+  <footer>
+    <p>Portal del Colaborador MPS · Versión web</p>
+  </footer>
+
+  <script src="js/portal.js"></script>
+</body>
+</html>
