@@ -62,14 +62,14 @@
   {
     "categoria": "calidad",
     "titulo": "Mapa de procesos",
-    "descripcion": "Consulta general del mapa de procesos del SGC.",
-    "archivo": null,
-    "clave": "Pendiente",
-    "revision": "Pendiente",
-    "fecha": "Pendiente",
-    "vigente": false,
-    "estado": "Pendiente de carga",
-    "destacado": false
+    "descripcion": "Mapa de interacción de los procesos del SGC de MPS para consulta del personal.",
+    "archivo": "docs/calidad/DC-SGC-003_Mapa_Interaccion_Procesos.pdf",
+    "clave": "DC-SGC-003",
+    "revision": "Rev.: 09-May./26",
+    "fecha": "09-May./2026",
+    "vigente": true,
+    "destacado": false,
+    "estatus": "Vigente"
   },
   {
     "categoria": "rh",
