@@ -61,12 +61,12 @@
   },
   {
     "categoria": "calidad",
-    "titulo": "Mapa de procesos",
-    "descripcion": "Mapa de interacción de los procesos del SGC de MPS para consulta del personal.",
-    "archivo": "docs/calidad/DC-SGC-003_Mapa_Interaccion_Procesos.pdf",
-    "clave": "DC-SGC-003",
-    "revision": "Rev.: 09-May./26",
-    "fecha": "09-May./2026",
+    "titulo": "Organigrama",
+    "descripcion": "Organigrama vigente de MPS para consulta del personal.",
+    "archivo": "docs/calidad/DC-DIR-001_Organigrama.pdf",
+    "clave": "DC-DIR-001",
+    "revision": "Rev.: 06-Ago./24",
+    "fecha": "06-Ago./2024",
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente"
@@ -82,19 +82,6 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente"
-  },
-  {
-    "categoria": "rh",
-    "titulo": "Asistencia y puntualidad",
-    "descripcion": "Nota: La jornada es de 6:00 a.m. a 6:00 p.m. Favor de llegar a tiempo y registrar las checadas correspondientes conforme aplique.",
-    "archivo": null,
-    "clave": "Nota RH",
-    "revision": "Informativo",
-    "fecha": "Vigente",
-    "vigente": true,
-    "destacado": false,
-    "estatus": "Nota informativa",
-    "nota": true
   },
   {
     "categoria": "rh",
@@ -138,7 +125,7 @@
   {
     "categoria": "seguridad",
     "titulo": "EPP obligatorio",
-    "descripcion": "Equipo de protección personal básico:<div class=\"epp-icons\"><span class=\"epp-item\">👞 <strong>Zapato industrial</strong></span><span class=\"epp-item\">🧤 <strong>Guantes</strong> cuando sea necesario</span><span class=\"epp-item\">🥽 <strong>Lentes</strong> cuando sea necesario</span></div>",
+    "descripcion": "Equipo de protección personal básico:<div class=\"epp-icons\"><span class=\"epp-item\">👞 <strong>Zapato industrial</strong></span><span class=\"epp-item\">🧤 <strong>Guantes</strong> cuando sea necesario</span><span class=\"epp-item\">🥽 <strong>Lentes</strong> cuando sea necesario</span><span class=\"epp-item\">🎧 <strong>Tapones auditivos</strong> cuando apliquen</span></div>",
     "archivo": null,
     "clave": "Nota Seguridad",
     "revision": "Informativo",
