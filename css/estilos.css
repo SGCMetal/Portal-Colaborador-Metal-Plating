@@ -1138,3 +1138,15 @@ body[data-page="seguridad"] .note-chip {
     height: 820px;
   }
 }
+
+
+/* ===== Version 13: cambios RH, organigrama y tapones auditivos ===== */
+.epp-icons {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 720px) {
+  .epp-icons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
