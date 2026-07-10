@@ -1,14 +1,10 @@
-Portal del Colaborador MPS - VERSIÓN WEB
+Portal del Colaborador MPS - VERSIÓN WEB v5
 
 Cambio principal:
-- El Buzón del Colaborador fue adaptado para funcionar con Google Forms.
-- El portal ya puede subirse a GitHub Pages como sitio estático.
-- Ya no depende de servidor Python para recibir mensajes del buzón.
+- La sección Calidad / SGC queda orientada a Política de Calidad, Organigrama y documentos básicos del SGC.
+- Se mantiene DC-DIR-001 Organigrama Rev. 07-Jun./26 como documento vigente.
+- El portal se mantiene listo para publicarse en GitHub Pages con Buzón del Colaborador mediante Google Forms.
 
-Formulario vinculado:
-https://docs.google.com/forms/d/e/1FAIpQLSewBGHp7c_jRxtkH9OO-62f5FGheH67mSQRC5M9bnCL1MNGZw/viewform?usp=sharing&ouid=113415303447286872352
-
-Pendiente:
-- Subir el contenido del portal a GitHub.
-- Activar GitHub Pages.
-- Probar la liga pública y generar QR definitivo.
+Para actualizar GitHub Pages:
+- Reemplazar principalmente index.html y data/documentos.json.
+- Para mantener toda la versión alineada, reemplazar el contenido completo del portal.
