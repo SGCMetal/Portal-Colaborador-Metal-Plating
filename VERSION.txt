@@ -1,10 +1,8 @@
-Portal del Colaborador MPS - VERSIÓN WEB v5
+Portal del Colaborador MPS - VERSIÓN APP MÓVIL
 
-Cambio principal:
-- La sección Calidad / SGC queda orientada a Política de Calidad, Organigrama y documentos básicos del SGC.
-- Se mantiene DC-DIR-001 Organigrama Rev. 07-Jun./26 como documento vigente.
-- El portal se mantiene listo para publicarse en GitHub Pages con Buzón del Colaborador mediante Google Forms.
-
-Para actualizar GitHub Pages:
-- Reemplazar principalmente index.html y data/documentos.json.
-- Para mantener toda la versión alineada, reemplazar el contenido completo del portal.
+- Rediseño completo con navegación estilo app móvil.
+- Calidad / SGC se renombró a Identidad MPS.
+- Menú inferior: Inicio, Identidad, Avisos, Buzón y Más.
+- Avisos en formato tipo feed / muro.
+- Biblioteca de documentos con filtros.
+- Buzón integrado con Google Forms.

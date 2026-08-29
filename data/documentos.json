@@ -1,6 +1,6 @@
 [
   {
-    "categoria": "calidad",
+    "categoria": "identidad",
     "titulo": "Política de Calidad vigente",
     "descripcion": "Consulta la política de calidad vigente de Metal Plating y Servicios.",
     "archivo": "docs/calidad/DC-DIR-003_Politica_Calidad.pdf",
@@ -12,7 +12,7 @@
     "estatus": "Vigente"
   },
   {
-    "categoria": "calidad",
+    "categoria": "identidad",
     "titulo": "Misión",
     "descripcion": "Misión de Metal Plating y Servicios para consulta del personal.",
     "archivo": "docs/calidad/DC-DIR-004_Mision.pdf",
@@ -24,7 +24,7 @@
     "estatus": "Vigente"
   },
   {
-    "categoria": "calidad",
+    "categoria": "identidad",
     "titulo": "Visión",
     "descripcion": "Visión de Metal Plating y Servicios para consulta del personal.",
     "archivo": "docs/calidad/DC-DIR-005_Vision.pdf",
@@ -36,7 +36,7 @@
     "estatus": "Vigente"
   },
   {
-    "categoria": "calidad",
+    "categoria": "identidad",
     "titulo": "Valores",
     "descripcion": "Valores de Metal Plating y Servicios para consulta del personal.",
     "archivo": "docs/calidad/DC-DIR-006_Valores.pdf",
@@ -48,7 +48,7 @@
     "estatus": "Vigente"
   },
   {
-    "categoria": "calidad",
+    "categoria": "identidad",
     "titulo": "Guía básica para el uso correcto del SGC",
     "descripcion": "Guía para consultar documentos vigentes, llenar registros correctamente y sugerir mejoras al SGC.",
     "archivo": "docs/calidad/DC-SGC-009_Guia_Basica_Uso_Correcto_SGC.pdf",
@@ -60,7 +60,7 @@
     "estatus": "Vigente"
   },
   {
-    "categoria": "calidad",
+    "categoria": "identidad",
     "titulo": "Organigrama",
     "descripcion": "Organigrama vigente de MPS para consulta del personal.",
     "archivo": "docs/calidad/DC-DIR-001_Organigrama.pdf",
