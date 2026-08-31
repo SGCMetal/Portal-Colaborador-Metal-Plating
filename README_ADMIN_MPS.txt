@@ -1,14 +1,10 @@
-PORTAL DEL COLABORADOR MPS - VERSIÓN APP MÓVIL
+PORTAL DEL COLABORADOR MPS - VERSIÓN APP MÓVIL v2
 
-Esta versión está pensada para uso en celular y para usuarios de diferentes edades.
+Objetivo: facilitar el uso del portal para personal de diferentes edades mediante una interfaz más limpia, amigable y simple.
 
-Menú principal: Inicio, Identidad MPS, Avisos, Buzón y Más.
-
-Identidad MPS incluye políticas, misión, visión, valores, organigrama y documentos generales de la empresa.
+Cambios visuales: inicio simplificado, menos texto inicial, colores más suaves y navegación más intuitiva.
 
 Administración:
-- Documentos: data/documentos.json y carpetas dentro de docs/.
-- Avisos: data/comunicados.csv y data/comunicados.json.
-- Buzón: Google Forms.
-
-No publicar información confidencial como dibujos de cliente, contratos, precios, parámetros críticos o registros con datos personales.
+- Documentos: data/documentos.json y docs/
+- Avisos: data/comunicados.csv y data/comunicados.json
+- Buzón: Google Forms

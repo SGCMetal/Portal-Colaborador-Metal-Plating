@@ -1,8 +1,8 @@
-Portal del Colaborador MPS - VERSIÓN APP MÓVIL
+Portal del Colaborador MPS - VERSIÓN APP MÓVIL v2
 
-- Rediseño completo con navegación estilo app móvil.
-- Calidad / SGC se renombró a Identidad MPS.
-- Menú inferior: Inicio, Identidad, Avisos, Buzón y Más.
-- Avisos en formato tipo feed / muro.
-- Biblioteca de documentos con filtros.
-- Buzón integrado con Google Forms.
+Mejoras principales:
+- Pantalla de inicio más limpia y con menos contenido.
+- Se retiró la sección de documento destacado y avisos recientes del inicio.
+- Fondo y paleta visual más suaves.
+- Navegación móvil más clara e intuitiva.
+- Se mantiene la sección Identidad MPS, Avisos, Buzón y Más.

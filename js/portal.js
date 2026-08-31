@@ -1,16 +1,121 @@
 
-const qs=(s)=>document.querySelector(s);const qsa=(s)=>Array.from(document.querySelectorAll(s));
-async function cargarJSON(r){const resp=await fetch(r,{cache:"no-store"});if(!resp.ok)throw new Error(`No se pudo cargar ${r}`);return await resp.json()}
-function claseEstado(e){const n=(e||'').toLowerCase();if(n.includes('vigente'))return'ok';if(n.includes('borrador'))return'draft';return'pending'}
-function crearMeta(d){const e=d.estatus||d.estado||(d.vigente?'Vigente':'Pendiente');return `<div class="meta-row"><span class="pill ${claseEstado(e)}">${e}</span><span class="pill">${d.clave||'Sin clave'}</span><span class="pill">${d.revision||'Sin revisión'}</span><span class="pill">${d.fecha||'Sin fecha'}</span></div>`}
-function crearBotones(d){if(d.nota)return `<div class="note-chip">Nota informativa</div>`;if(d.archivo&&d.vigente)return `<div class="btn-row"><a class="btn" href="${d.archivo}" target="_blank" rel="noopener">Abrir documento</a></div>`;return `<div class="btn-row"><span class="btn disabled">Pendiente de carga</span></div>`}
-function tarjetaDocumento(d){return `<article class="doc-card" data-cat="${d.categoria}"><h3>${d.titulo}</h3><p>${d.descripcion}</p>${crearMeta(d)}${crearBotones(d)}</article>`}
-function renderDocs(ds,cat,sel){const c=qs(sel);if(!c)return;c.innerHTML=ds.filter(d=>d.categoria===cat).map(tarjetaDocumento).join('')}
-function renderDocsAll(ds,sel){const c=qs(sel);if(!c)return;c.innerHTML=ds.map(tarjetaDocumento).join('');qsa('[data-filter]').forEach(b=>b.addEventListener('click',()=>{qsa('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;const l=f==='todos'?ds:ds.filter(d=>d.categoria===f);c.innerHTML=l.map(tarjetaDocumento).join('')}))}
-function renderDestacado(ds){const c=qs('#documento-destacado');if(!c)return;const d=ds.find(x=>x.destacado)||ds.find(x=>x.categoria==='identidad');c.innerHTML=d?`<div class="doc-mini"><h3>${d.titulo}</h3><p>Documento principal disponible para consulta rápida.</p>${crearMeta(d)}${crearBotones(d)}</div>`:'<p>No hay documento destacado configurado.</p>'}
-function formatearFecha(f){const [y,m,d]=(f||'').split('-').map(Number);if(!y||!m||!d)return f||'Sin fecha';return new Date(y,m-1,d).toLocaleDateString('es-MX',{day:'2-digit',month:'short',year:'numeric'})}
-function tarjetaAviso(c){const a=c.archivo?`<a class="btn secondary" href="${c.archivo}" target="_blank" rel="noopener">Ver archivo</a>`:'';return `<article class="feed-card"><div class="feed-top"><div class="feed-avatar">📣</div><div class="feed-meta"><strong>${c.titulo}</strong><span>${formatearFecha(c.fecha)} · ${c.area||'MPS'} · ${c.tipo||'Aviso'}</span></div></div><p>${c.mensaje||''}</p><div class="btn-row">${a}</div></article>`}
-function renderAvisos(cs,sel,lim=null){const c=qs(sel);if(!c)return;let l=[...cs].sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||''));if(lim)l=l.slice(0,lim);c.innerHTML=l.map(tarjetaAviso).join('')}
-function marcarNav(){const p=document.body.dataset.page;qsa('.bottom-nav a').forEach(a=>{if(a.dataset.nav===p)a.classList.add('active')})}
-async function iniciar(){marcarNav();try{const[docs,coms]=await Promise.all([cargarJSON('data/documentos.json'),cargarJSON('data/comunicados.json')]);renderDestacado(docs);renderDocs(docs,'identidad','#docs-identidad');renderDocs(docs,'rh','#docs-rh');renderDocs(docs,'seguridad','#docs-seguridad');renderDocsAll(docs,'#docs-todos');renderAvisos(coms,'#avisos-feed');renderAvisos(coms,'#avisos-recientes',2)}catch(e){console.error(e);const c=qs('#documento-destacado')||qs('#docs-todos')||qs('#avisos-feed');if(c)c.innerHTML='<p>No se pudo cargar la información. Revisa que las carpetas data, css, js, docs y assets estén cargadas correctamente.</p>'}}
-document.addEventListener('DOMContentLoaded',iniciar);
+const qs = (s) => document.querySelector(s);
+const qsa = (s) => Array.from(document.querySelectorAll(s));
+
+async function cargarJSON(ruta){
+  const resp = await fetch(ruta, {cache:'no-store'});
+  if(!resp.ok) throw new Error('No se pudo cargar ' + ruta);
+  return await resp.json();
+}
+
+function claseEstado(estado){
+  const e = (estado || '').toLowerCase();
+  if(e.includes('vigente')) return 'ok';
+  return 'info';
+}
+
+function metaHTML(doc){
+  const estado = doc.estatus || (doc.vigente ? 'Vigente' : 'Pendiente');
+  return `
+    <div class="meta">
+      <span class="pill ${claseEstado(estado)}">${estado}</span>
+      <span class="pill">${doc.clave || 'Sin clave'}</span>
+      <span class="pill">${doc.revision || 'Sin revisión'}</span>
+    </div>`;
+}
+
+function botonesHTML(doc){
+  if(doc.nota) return '<div class="note-chip">Nota informativa</div>';
+  if(doc.archivo && doc.vigente) return `<div class="btn-row"><a class="btn" href="${doc.archivo}" target="_blank" rel="noopener">Abrir documento</a></div>`;
+  return '<div class="btn-row"><span class="btn disabled">Pendiente de carga</span></div>';
+}
+
+function tarjetaDoc(doc){
+  return `
+  <article class="doc-card">
+    <h3>${doc.titulo}</h3>
+    <p>${doc.descripcion}</p>
+    ${metaHTML(doc)}
+    ${botonesHTML(doc)}
+  </article>`;
+}
+
+function renderDocumentos(documentos, selector, categoria=null){
+  const cont = qs(selector);
+  if(!cont) return;
+  const lista = categoria ? documentos.filter(d => d.categoria === categoria) : documentos;
+  cont.innerHTML = lista.map(tarjetaDoc).join('');
+}
+
+function activarFiltros(documentos){
+  const cont = qs('#docs-todos');
+  if(!cont) return;
+  qsa('[data-filter]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      qsa('[data-filter]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      const lista = filter === 'todos' ? documentos : documentos.filter(d => d.categoria === filter);
+      cont.innerHTML = lista.map(tarjetaDoc).join('');
+    });
+  });
+}
+
+function formatearFecha(fecha){
+  if(!fecha) return 'Sin fecha';
+  const p = fecha.split('-');
+  if(p.length !== 3) return fecha;
+  const [y,m,d] = p.map(Number);
+  return new Date(y,m-1,d).toLocaleDateString('es-MX', {day:'2-digit', month:'short', year:'numeric'});
+}
+
+function tarjetaAviso(item){
+  const archivo = item.archivo ? `<a class="btn secondary" href="${item.archivo}" target="_blank" rel="noopener">Ver archivo</a>` : '';
+  return `
+  <article class="feed-card">
+    <div class="feed-head">
+      <div class="feed-avatar">📣</div>
+      <div class="feed-meta">
+        <strong>${item.titulo}</strong>
+        <span>${formatearFecha(item.fecha)} · ${item.area || 'MPS'} · ${item.tipo || 'Aviso'}</span>
+      </div>
+    </div>
+    <p>${item.mensaje || ''}</p>
+    <div class="btn-row">${archivo}</div>
+  </article>`;
+}
+
+function renderAvisos(avisos, selector, limite=null){
+  const cont = qs(selector);
+  if(!cont) return;
+  let lista = [...avisos].sort((a,b) => (b.fecha || '').localeCompare(a.fecha || ''));
+  if(limite) lista = lista.slice(0, limite);
+  cont.innerHTML = lista.map(tarjetaAviso).join('');
+}
+
+function activarNav(){
+  const page = document.body.dataset.page;
+  qsa('.bottom-nav a').forEach(a => {
+    if(a.dataset.nav === page) a.classList.add('active');
+  });
+}
+
+async function iniciar(){
+  activarNav();
+  try{
+    const [documentos, avisos] = await Promise.all([
+      cargarJSON('data/documentos.json'),
+      cargarJSON('data/comunicados.json')
+    ]);
+    renderDocumentos(documentos, '#docs-identidad', 'identidad');
+    renderDocumentos(documentos, '#docs-rh', 'rh');
+    renderDocumentos(documentos, '#docs-seguridad', 'seguridad');
+    renderDocumentos(documentos, '#docs-todos', null);
+    renderAvisos(avisos, '#avisos-feed');
+    activarFiltros(documentos);
+  }catch(err){
+    console.error(err);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', iniciar);
