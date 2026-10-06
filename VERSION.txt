@@ -1,8 +1,9 @@
-Portal del Colaborador MPS - VERSIÓN APP MÓVIL v2
+Portal del Colaborador MPS - VERSIÓN APP MÓVIL v5
 
 Mejoras principales:
-- Pantalla de inicio más limpia y con menos contenido.
-- Se retiró la sección de documento destacado y avisos recientes del inicio.
-- Fondo y paleta visual más suaves.
-- Navegación móvil más clara e intuitiva.
-- Se mantiene la sección Identidad MPS, Avisos, Buzón y Más.
+- Diseño más premium y refinado.
+- Tipografía Inter con mejor jerarquía visual.
+- Íconos SVG consistentes.
+- Navegación inferior flotante más tipo app real.
+- Avisos con estética tipo Instagram: historias/filtros, post destacado y feed visual.
+- Identidad MPS conserva vistas previas de documentos y botón abrir.

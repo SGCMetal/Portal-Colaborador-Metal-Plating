@@ -1,0 +1,9 @@
+{
+  "name": "Portal del Colaborador MPS",
+  "short_name": "Portal MPS",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#f7f9fc",
+  "theme_color": "#17344d",
+  "icons": []
+}

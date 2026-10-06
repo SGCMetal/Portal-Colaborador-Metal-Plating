@@ -125,7 +125,7 @@
   {
     "categoria": "seguridad",
     "titulo": "EPP obligatorio",
-    "descripcion": "Equipo de protección personal básico:<div class=\"epp-icons\"><span class=\"epp-item\">👞 <strong>Zapato industrial</strong></span><span class=\"epp-item\">🧤 <strong>Guantes</strong> cuando sea necesario</span><span class=\"epp-item\">🥽 <strong>Lentes</strong> cuando sea necesario</span><span class=\"epp-item\">🎧 <strong>Tapones auditivos</strong> cuando apliquen</span></div>",
+    "descripcion": "Equipo de protección personal básico:<div class=\"epp-icons\"><span class=\"epp-item\" data-epp=\"shoe\"><strong>Zapato industrial</strong></span><span class=\"epp-item\" data-epp=\"glove\"><strong>Guantes</strong> cuando sea necesario</span><span class=\"epp-item\" data-epp=\"glasses\"><strong>Lentes</strong> cuando sea necesario</span><span class=\"epp-item\" data-epp=\"ear\"><strong>Tapones auditivos</strong> cuando apliquen</span></div>",
     "archivo": null,
     "clave": "Nota Seguridad",
     "revision": "Informativo",

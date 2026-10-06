@@ -5,29 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Inicio - Portal del Colaborador MPS</title>
   <meta name="description" content="Portal del Colaborador MPS">
+  <meta name="theme-color" content="#17344d">
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body data-page="inicio">
   <div class="shell">
     
-    <header class="topbar">
-      <a class="logo-box" href="index.html"><img src="assets/logo_mps.png" alt="Logo MPS"></a>
-      <div class="topcopy">
-        <strong>Portal del Colaborador</strong>
-        <span>Metal Plating y Servicios</span>
-      </div>
-      <div class="top-actions">
-        <a class="action-ico" href="documentos.html" aria-label="Documentos">📚</a>
-      </div>
-    </header>
-    
+<header class="topbar">
+  <a class="logo-box" href="index.html"><img src="assets/logo_mps.png" alt="Logo MPS"></a>
+  <div class="topcopy">
+    <strong>Portal del Colaborador</strong>
+    <span>Metal Plating y Servicios</span>
+  </div>
+  <div class="top-actions">
+    <a class="action-ico" href="documentos.html" aria-label="Biblioteca"><span data-icon="library"></span></a>
+  </div>
+</header>
+
     
 <section class="hero">
   <h1>Bienvenido al Portal del Colaborador MPS</h1>
-  <p>Accede de forma simple a la información principal de la empresa, avisos y al Buzón del Colaborador.</p>
+  <p>Accede a la información principal de la empresa, documentos, avisos y al Buzón del Colaborador de forma simple, moderna y rápida.</p>
   <div class="hero-cta">
-    <a class="cta-chip" href="identidad.html">⭐ Identidad MPS</a>
-    <a class="cta-chip" href="avisos.html">📣 Ver avisos</a>
+    <a class="cta-chip" href="identidad.html"><span data-icon="star"></span><span>Identidad MPS</span></a>
+    <a class="cta-chip" href="avisos.html"><span data-icon="bell"></span><span>Ver avisos</span></a>
   </div>
 </section>
 
@@ -35,54 +37,54 @@
   <div class="section-title">
     <div>
       <h2>Accesos principales</h2>
-      <p>Solo lo más importante para entrar rápido.</p>
+      <p>Selecciona una opción para continuar.</p>
     </div>
   </div>
   <div class="home-grid">
     <a class="card quick identity" href="identidad.html">
-      <div class="icon">⭐</div>
+      <div class="icon"><span data-icon="star"></span></div>
       <div><h3>Identidad MPS</h3><p>Políticas, misión, visión, valores y organigrama.</p></div>
     </a>
     <a class="card quick rh" href="rh.html">
-      <div class="icon">👥</div>
-      <div><h3>Personal / RH</h3><p>Reglamento interno y notas informativas.</p></div>
+      <div class="icon"><span data-icon="users"></span></div>
+      <div><h3>Personal / RH</h3><p>Reglamento interno y notas del personal.</p></div>
     </a>
     <a class="card quick seguridad" href="seguridad.html">
-      <div class="icon">🦺</div>
+      <div class="icon"><span data-icon="shield"></span></div>
       <div><h3>Seguridad</h3><p>EPP obligatorio y reglas básicas de seguridad.</p></div>
     </a>
     <a class="card quick avisos" href="avisos.html">
-      <div class="icon">📣</div>
-      <div><h3>Avisos</h3><p>Comunicados recientes para todo el personal.</p></div>
+      <div class="icon"><span data-icon="bell"></span></div>
+      <div><h3>Avisos</h3><p>Comunicados y novedades para el personal.</p></div>
     </a>
     <a class="card quick buzon" href="buzon.html">
-      <div class="icon">💬</div>
+      <div class="icon"><span data-icon="message"></span></div>
       <div><h3>Buzón</h3><p>Sugerencias, quejas, necesidades o comentarios.</p></div>
     </a>
   </div>
 </section>
 
 <section class="section">
-  <div class="card mini-strip">
-    <div class="mini-icon">ℹ️</div>
+  <div class="card banner-note">
+    <div class="mini-icon"><span data-icon="info"></span></div>
     <div>
-      <strong>Acceso alterno</strong>
-      <p>Si no puedes abrir el portal por QR o no hay internet, consulta el respaldo físico disponible en tableros oficiales o con tu responsable de área.</p>
+      <strong>Respaldo físico</strong>
+      <p>Si un día no hay internet o el QR falla, consulta los tableros oficiales o acude con tu responsable de área.</p>
     </div>
   </div>
 </section>
 
-    <footer class="footer">Portal del Colaborador MPS · Versión app móvil v2</footer>
+    <footer class="footer">Portal del Colaborador MPS · Versión app móvil v5</footer>
   </div>
   
-    <nav class="bottom-nav" aria-label="Navegación principal">
-      <a href="index.html" data-nav="inicio"><span class="nav-ico">🏠</span><span>Inicio</span></a>
-      <a href="identidad.html" data-nav="identidad"><span class="nav-ico">⭐</span><span>Identidad</span></a>
-      <a href="avisos.html" data-nav="avisos"><span class="nav-ico">📣</span><span>Avisos</span></a>
-      <a href="buzon.html" data-nav="buzon"><span class="nav-ico">💬</span><span>Buzón</span></a>
-      <a href="mas.html" data-nav="mas"><span class="nav-ico">☰</span><span>Más</span></a>
-    </nav>
-    
+<nav class="bottom-nav" aria-label="Navegación principal">
+  <a href="index.html" data-nav="inicio"><span class="nav-ico" data-icon="home"></span><span>Inicio</span></a>
+  <a href="identidad.html" data-nav="identidad"><span class="nav-ico" data-icon="star"></span><span>Identidad</span></a>
+  <a href="avisos.html" data-nav="avisos"><span class="nav-ico" data-icon="bell"></span><span>Avisos</span></a>
+  <a href="buzon.html" data-nav="buzon"><span class="nav-ico" data-icon="message"></span><span>Buzón</span></a>
+  <a href="mas.html" data-nav="mas"><span class="nav-ico" data-icon="more"></span><span>Más</span></a>
+</nav>
+
   <script src="js/portal.js"></script>
 </body>
 </html>
