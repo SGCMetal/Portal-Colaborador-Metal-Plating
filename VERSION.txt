@@ -1,7 +1,7 @@
-Portal del Colaborador MPS - VERSIÓN APP MÓVIL v6
+Portal del Colaborador MPS - VERSIÓN APP MÓVIL v7
 
 Corrección principal:
-- Se corrigió la vista previa negra en Identidad MPS.
-- Ahora las miniaturas de los PDFs son imágenes estáticas generadas desde la primera página,
-  lo que mejora la compatibilidad en celular y GitHub Pages.
-- Se conserva el botón Abrir para consultar el PDF completo.
+- Se eliminó por completo la previsualización con PDF embebido para evitar recuadros negros en celular.
+- Las vistas rápidas de Identidad MPS ahora usan imágenes JPG estáticas compatibles con Android/iPhone.
+- Se agregó cache busting (?v=7) en CSS y JS para forzar que el celular cargue la versión nueva.
+- Se mantiene el botón Abrir para consultar el PDF completo.

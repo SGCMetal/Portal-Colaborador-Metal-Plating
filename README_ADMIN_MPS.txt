@@ -1,5 +1,12 @@
-PORTAL DEL COLABORADOR MPS - VERSIÓN APP MÓVIL v6
+PORTAL DEL COLABORADOR MPS - VERSIÓN APP MÓVIL v7
 
 Ajuste aplicado:
-La vista previa de PDFs en celulares mostraba un fondo negro por la forma en que algunos navegadores
-manejan iframes de PDF. Se reemplazó por miniaturas en imagen generadas desde la primera página del PDF.
+En algunos celulares el navegador seguía mostrando la vista previa de PDF en negro por caché o por el visor PDF móvil.
+Esta versión elimina los PDF embebidos de la miniatura y usa únicamente imágenes JPG generadas previamente.
+
+Importante al subir a GitHub:
+- Reemplazar index.html, identidad.html, documentos.html, avisos.html, buzon.html, mas.html, rh.html, seguridad.html.
+- Reemplazar css/estilos.css.
+- Reemplazar js/portal.js.
+- Reemplazar data/documentos.json.
+- Subir completa la carpeta assets/thumbs/.

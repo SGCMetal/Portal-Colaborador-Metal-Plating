@@ -10,7 +10,7 @@
     "vigente": true,
     "destacado": true,
     "estatus": "Vigente",
-    "miniatura": "assets/thumbs/DC-DIR-003_Politica_Calidad.png"
+    "miniatura": "assets/thumbs/DC-DIR-003_Politica_Calidad_v7.jpg?v=7"
   },
   {
     "categoria": "identidad",
@@ -23,7 +23,7 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente",
-    "miniatura": "assets/thumbs/DC-DIR-004_Mision.png"
+    "miniatura": "assets/thumbs/DC-DIR-004_Mision_v7.jpg?v=7"
   },
   {
     "categoria": "identidad",
@@ -36,7 +36,7 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente",
-    "miniatura": "assets/thumbs/DC-DIR-005_Vision.png"
+    "miniatura": "assets/thumbs/DC-DIR-005_Vision_v7.jpg?v=7"
   },
   {
     "categoria": "identidad",
@@ -49,7 +49,7 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente",
-    "miniatura": "assets/thumbs/DC-DIR-006_Valores.png"
+    "miniatura": "assets/thumbs/DC-DIR-006_Valores_v7.jpg?v=7"
   },
   {
     "categoria": "identidad",
@@ -62,7 +62,7 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente",
-    "miniatura": "assets/thumbs/DC-SGC-009_Guia_Basica_Uso_Correcto_SGC.png"
+    "miniatura": "assets/thumbs/DC-SGC-009_Guia_Basica_Uso_Correcto_SGC_v7.jpg?v=7"
   },
   {
     "categoria": "identidad",
@@ -75,7 +75,7 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente",
-    "miniatura": "assets/thumbs/DC-DIR-001_Organigrama.png"
+    "miniatura": "assets/thumbs/DC-DIR-001_Organigrama_v7.jpg?v=7"
   },
   {
     "categoria": "rh",
@@ -88,7 +88,7 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Vigente",
-    "miniatura": "assets/thumbs/DC-RHU-002_Reglamento_Interno.png"
+    "miniatura": "assets/thumbs/DC-RHU-002_Reglamento_Interno_v7.jpg?v=7"
   },
   {
     "categoria": "rh",

@@ -45,16 +45,20 @@ function botonesHTML(doc){
 function previewHTML(doc){
   if(doc.categoria === 'identidad' && !doc.nota){
     if(doc.miniatura){
-      return `<div class="preview-pane">
+      return `<div class="preview-pane preview-image-pane">
         <span class="preview-label">${icon.search}<span>Vista rápida</span></span>
-        <img src="${doc.miniatura}" alt="Vista previa de ${doc.titulo}" loading="lazy">
+        <img class="preview-img" src="${doc.miniatura}" alt="Vista previa de ${doc.titulo}" loading="lazy" onerror="this.closest('.preview-pane').classList.add('preview-error'); this.remove();">
+        <div class="preview-fallback">
+          <div class="pdf-badge">PDF</div>
+          <div>Miniatura no disponible</div>
+        </div>
       </div>`;
     }
-    return `<div class="preview-pane">
+    return `<div class="preview-pane preview-image-pane preview-error">
       <span class="preview-label">${icon.search}<span>Vista rápida</span></span>
       <div class="preview-fallback">
         <div class="pdf-badge">PDF</div>
-        <div>Vista previa no disponible</div>
+        <div>Miniatura no disponible</div>
       </div>
     </div>`;
   }
