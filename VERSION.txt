@@ -1,9 +1,7 @@
-Portal del Colaborador MPS - VERSIÓN APP MÓVIL v5
+Portal del Colaborador MPS - VERSIÓN APP MÓVIL v6
 
-Mejoras principales:
-- Diseño más premium y refinado.
-- Tipografía Inter con mejor jerarquía visual.
-- Íconos SVG consistentes.
-- Navegación inferior flotante más tipo app real.
-- Avisos con estética tipo Instagram: historias/filtros, post destacado y feed visual.
-- Identidad MPS conserva vistas previas de documentos y botón abrir.
+Corrección principal:
+- Se corrigió la vista previa negra en Identidad MPS.
+- Ahora las miniaturas de los PDFs son imágenes estáticas generadas desde la primera página,
+  lo que mejora la compatibilidad en celular y GitHub Pages.
+- Se conserva el botón Abrir para consultar el PDF completo.

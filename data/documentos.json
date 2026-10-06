@@ -9,7 +9,8 @@
     "fecha": "07-Dic./2020",
     "vigente": true,
     "destacado": true,
-    "estatus": "Vigente"
+    "estatus": "Vigente",
+    "miniatura": "assets/thumbs/DC-DIR-003_Politica_Calidad.png"
   },
   {
     "categoria": "identidad",
@@ -21,7 +22,8 @@
     "fecha": "07-Dic./2020",
     "vigente": true,
     "destacado": false,
-    "estatus": "Vigente"
+    "estatus": "Vigente",
+    "miniatura": "assets/thumbs/DC-DIR-004_Mision.png"
   },
   {
     "categoria": "identidad",
@@ -33,7 +35,8 @@
     "fecha": "07-Dic./2020",
     "vigente": true,
     "destacado": false,
-    "estatus": "Vigente"
+    "estatus": "Vigente",
+    "miniatura": "assets/thumbs/DC-DIR-005_Vision.png"
   },
   {
     "categoria": "identidad",
@@ -45,7 +48,8 @@
     "fecha": "06-Dic./2020",
     "vigente": true,
     "destacado": false,
-    "estatus": "Vigente"
+    "estatus": "Vigente",
+    "miniatura": "assets/thumbs/DC-DIR-006_Valores.png"
   },
   {
     "categoria": "identidad",
@@ -57,7 +61,8 @@
     "fecha": "Jun./2026",
     "vigente": true,
     "destacado": false,
-    "estatus": "Vigente"
+    "estatus": "Vigente",
+    "miniatura": "assets/thumbs/DC-SGC-009_Guia_Basica_Uso_Correcto_SGC.png"
   },
   {
     "categoria": "identidad",
@@ -69,7 +74,8 @@
     "fecha": "07-Jun./2026",
     "vigente": true,
     "destacado": false,
-    "estatus": "Vigente"
+    "estatus": "Vigente",
+    "miniatura": "assets/thumbs/DC-DIR-001_Organigrama.png"
   },
   {
     "categoria": "rh",
@@ -81,7 +87,8 @@
     "fecha": "01-Ago./2021",
     "vigente": true,
     "destacado": false,
-    "estatus": "Vigente"
+    "estatus": "Vigente",
+    "miniatura": "assets/thumbs/DC-RHU-002_Reglamento_Interno.png"
   },
   {
     "categoria": "rh",
@@ -94,7 +101,8 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Nota informativa",
-    "nota": true
+    "nota": true,
+    "miniatura": null
   },
   {
     "categoria": "rh",
@@ -107,7 +115,8 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Nota informativa",
-    "nota": true
+    "nota": true,
+    "miniatura": null
   },
   {
     "categoria": "seguridad",
@@ -120,7 +129,8 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Nota informativa",
-    "nota": true
+    "nota": true,
+    "miniatura": null
   },
   {
     "categoria": "seguridad",
@@ -133,7 +143,8 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Nota informativa",
-    "nota": true
+    "nota": true,
+    "miniatura": null
   },
   {
     "categoria": "seguridad",
@@ -146,7 +157,8 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Nota informativa",
-    "nota": true
+    "nota": true,
+    "miniatura": null
   },
   {
     "categoria": "seguridad",
@@ -159,6 +171,7 @@
     "vigente": true,
     "destacado": false,
     "estatus": "Nota informativa",
-    "nota": true
+    "nota": true,
+    "miniatura": null
   }
 ]

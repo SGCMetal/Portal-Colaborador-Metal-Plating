@@ -43,10 +43,19 @@ function botonesHTML(doc){
   return '<div class="btn-row"><span class="btn disabled">Pendiente de carga</span></div>';
 }
 function previewHTML(doc){
-  if(doc.archivo && doc.vigente && doc.categoria === 'identidad' && !doc.nota){
+  if(doc.categoria === 'identidad' && !doc.nota){
+    if(doc.miniatura){
+      return `<div class="preview-pane">
+        <span class="preview-label">${icon.search}<span>Vista rápida</span></span>
+        <img src="${doc.miniatura}" alt="Vista previa de ${doc.titulo}" loading="lazy">
+      </div>`;
+    }
     return `<div class="preview-pane">
       <span class="preview-label">${icon.search}<span>Vista rápida</span></span>
-      <iframe src="${doc.archivo}#toolbar=0&navpanes=0&scrollbar=0&page=1" loading="lazy" title="${doc.titulo}"></iframe>
+      <div class="preview-fallback">
+        <div class="pdf-badge">PDF</div>
+        <div>Vista previa no disponible</div>
+      </div>
     </div>`;
   }
   return '';

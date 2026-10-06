@@ -314,3 +314,45 @@ button{font:inherit}
   .doc-list,.feed-list{grid-template-columns:repeat(2,minmax(0,1fr))}
   .epp-icons{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
+
+
+.preview-card .preview-pane{
+  position:relative;
+  height:170px;
+  border-radius:19px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#f8fafc,#edf2f7);
+  border:1px solid var(--line);
+  margin-bottom:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.preview-card .preview-pane img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  background:#fff;
+}
+.preview-card .preview-fallback{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:var(--muted);
+  background:linear-gradient(180deg,#f8fafc,#eef3f8);
+}
+.preview-card .preview-fallback .pdf-badge{
+  min-height:34px;
+  padding:0 12px;
+  border-radius:999px;
+  background:#fff;
+  border:1px solid var(--line);
+  color:var(--navy);
+  font-weight:800;
+  display:inline-flex;
+  align-items:center;
+}
