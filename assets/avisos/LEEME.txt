@@ -1,3 +1,12 @@
-Coloca aquí imágenes JPG/PNG de avisos.
-Ejemplo: concurso_disfraces_2026.jpg
-Ruta a usar en comunicados.json: assets/avisos/concurso_disfraces_2026.jpg
+IMÁGENES DE AVISOS
+
+Guarda aquí las imágenes que uses en comunicados.csv.
+
+Ejemplos:
+concurso_disfraces_2026.png
+concurso_calaveritas_2026.png
+
+En Excel, columna "imagen":
+assets/avisos/concurso_disfraces_2026.png
+
+No uses rutas de Windows como C:\Users\...

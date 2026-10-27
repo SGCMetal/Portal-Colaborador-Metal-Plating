@@ -1,12 +1,16 @@
-PORTAL DEL COLABORADOR MPS - VERSIÓN APP MÓVIL v7
+PORTAL DEL COLABORADOR MPS - v10
 
-Ajuste aplicado:
-En algunos celulares el navegador seguía mostrando la vista previa de PDF en negro por caché o por el visor PDF móvil.
-Esta versión elimina los PDF embebidos de la miniatura y usa únicamente imágenes JPG generadas previamente.
+Versión consolidada para reemplazar versiones anteriores.
 
-Importante al subir a GitHub:
-- Reemplazar index.html, identidad.html, documentos.html, avisos.html, buzon.html, mas.html, rh.html, seguridad.html.
-- Reemplazar css/estilos.css.
-- Reemplazar js/portal.js.
-- Reemplazar data/documentos.json.
-- Subir completa la carpeta assets/thumbs/.
+ADMINISTRACIÓN DE AVISOS
+Fuente única: data/comunicados.csv
+
+Las imágenes se almacenan en:
+assets/avisos/
+
+No se usa comunicados.json.
+No se requiere Python para publicar avisos.
+
+Para evitar mezclar versiones, se recomienda reemplazar el contenido completo
+del repositorio de GitHub por esta versión, conservando las imágenes reales
+que correspondan a cada aviso.

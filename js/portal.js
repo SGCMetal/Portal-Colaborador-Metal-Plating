@@ -20,14 +20,61 @@ const icon = {
 };
 
 async function cargarJSON(ruta){
-  const resp = await fetch(ruta, {cache:'no-store'});
-  if(!resp.ok) throw new Error('No se pudo cargar ' + ruta);
-  return await resp.json();
+  const r = await fetch(ruta + '?t=' + Date.now(), {cache:'no-store'});
+  if(!r.ok) throw new Error('No se pudo cargar ' + ruta);
+  return await r.json();
 }
+
+/* Parser CSV compatible con comas y comillas de Excel */
+function parseCSV(text){
+  text = text.replace(/^\uFEFF/, '');
+  const rows = [];
+  let row = [], cell = '', quoted = false;
+
+  for(let i=0;i<text.length;i++){
+    const ch = text[i];
+    if(quoted){
+      if(ch === '"'){
+        if(text[i+1] === '"'){ cell += '"'; i++; }
+        else quoted = false;
+      } else {
+        cell += ch;
+      }
+    } else {
+      if(ch === '"') quoted = true;
+      else if(ch === ','){ row.push(cell); cell=''; }
+      else if(ch === '\n'){
+        row.push(cell); cell='';
+        if(row.some(v => v.trim() !== '')) rows.push(row);
+        row=[];
+      } else if(ch !== '\r'){
+        cell += ch;
+      }
+    }
+  }
+  if(cell.length || row.length){
+    row.push(cell);
+    if(row.some(v => v.trim() !== '')) rows.push(row);
+  }
+  if(!rows.length) return [];
+
+  const headers = rows[0].map(h => h.trim());
+  return rows.slice(1).map(cols => {
+    const obj = {};
+    headers.forEach((h, idx) => obj[h] = (cols[idx] || '').trim());
+    return obj;
+  }).filter(x => x.titulo);
+}
+
+async function cargarAvisosCSV(){
+  const r = await fetch('data/comunicados.csv?t=' + Date.now(), {cache:'no-store'});
+  if(!r.ok) throw new Error('No se pudo cargar data/comunicados.csv');
+  return parseCSV(await r.text());
+}
+
 function claseEstado(estado){
   const e = (estado || '').toLowerCase();
-  if(e.includes('vigente')) return 'ok';
-  return 'info';
+  return e.includes('vigente') ? 'ok' : 'info';
 }
 function metaHTML(doc){
   const estado = doc.estatus || (doc.vigente ? 'Vigente' : 'Pendiente');
@@ -47,19 +94,14 @@ function previewHTML(doc){
     if(doc.miniatura){
       return `<div class="preview-pane preview-image-pane">
         <span class="preview-label">${icon.search}<span>Vista rápida</span></span>
-        <img class="preview-img" src="${doc.miniatura}" alt="Vista previa de ${doc.titulo}" loading="lazy" onerror="this.closest('.preview-pane').classList.add('preview-error'); this.remove();">
-        <div class="preview-fallback">
-          <div class="pdf-badge">PDF</div>
-          <div>Miniatura no disponible</div>
-        </div>
+        <img class="preview-img" src="${doc.miniatura}" alt="Vista previa de ${doc.titulo}" loading="lazy"
+          onerror="this.closest('.preview-pane').classList.add('preview-error');this.remove();">
+        <div class="preview-fallback"><div class="pdf-badge">PDF</div><div>Vista previa no disponible</div></div>
       </div>`;
     }
     return `<div class="preview-pane preview-image-pane preview-error">
       <span class="preview-label">${icon.search}<span>Vista rápida</span></span>
-      <div class="preview-fallback">
-        <div class="pdf-badge">PDF</div>
-        <div>Miniatura no disponible</div>
-      </div>
+      <div class="preview-fallback"><div class="pdf-badge">PDF</div><div>Vista previa no disponible</div></div>
     </div>`;
   }
   return '';
@@ -79,7 +121,7 @@ function renderDocumentos(documentos, selector, categoria=null, preview=false){
   const lista = categoria ? documentos.filter(d => d.categoria === categoria) : documentos;
   cont.innerHTML = lista.map(d => tarjetaDoc(d, preview)).join('');
 }
-function activarFiltros(documentos){
+function activarFiltrosDocs(documentos){
   const cont = qs('#docs-todos');
   if(!cont) return;
   qsa('[data-filter]').forEach(btn => {
@@ -92,36 +134,64 @@ function activarFiltros(documentos){
     });
   });
 }
+
+function fechaValor(fecha){
+  if(!fecha) return 0;
+  if(fecha.includes('/')){
+    const [d,m,y] = fecha.split('/').map(Number);
+    return new Date(y,m-1,d).getTime();
+  }
+  if(fecha.includes('-')){
+    const [y,m,d] = fecha.split('-').map(Number);
+    return new Date(y,m-1,d).getTime();
+  }
+  return 0;
+}
 function formatearFecha(fecha){
   if(!fecha) return 'Sin fecha';
-  const p = fecha.split('-');
-  if(p.length !== 3) return fecha;
-  const [y,m,d] = p.map(Number);
-  return new Date(y,m-1,d).toLocaleDateString('es-MX', {day:'2-digit', month:'short', year:'numeric'});
+  let d,m,y;
+  if(fecha.includes('/')) [d,m,y] = fecha.split('/').map(Number);
+  else if(fecha.includes('-')) [y,m,d] = fecha.split('-').map(Number);
+  else return fecha;
+  return new Date(y,m-1,d).toLocaleDateString('es-MX', {day:'2-digit',month:'2-digit',year:'numeric'});
 }
-function areaColor(area=''){
+function areaCorta(area=''){
   const t = area.toLowerCase();
   if(t.includes('rh') || t.includes('personal')) return 'RH';
   if(t.includes('sgc') || t.includes('calidad')) return 'SGC';
   if(t.includes('dire')) return 'DIR';
   if(t.includes('seg')) return 'SEG';
-  if(t.includes('todo')) return 'MPS';
   return 'MPS';
+}
+function imagenAvisoHTML(item, destacado=false){
+  if(item.imagen){
+    const cls = destacado ? 'post-media post-media-image' : 'feed-media';
+    return `<div class="${cls}">
+      <img src="${item.imagen}" alt="${item.titulo || 'Aviso MPS'}" loading="lazy"
+        onerror="this.parentElement.classList.add('media-error');this.remove();">
+      <div class="media-fallback">
+        ${icon.info}
+        <strong>Imagen no disponible</strong>
+        <span>Revisa que el archivo exista en assets/avisos/.</span>
+      </div>
+    </div>`;
+  }
+  if(destacado){
+    return `<div class="post-media">
+      <div class="post-media-icon">${icon.spark}</div>
+      <div class="post-media-title"><small>Aviso destacado</small><strong>${item.titulo || 'Aviso'}</strong></div>
+    </div>`;
+  }
+  return '';
 }
 function featuredAvisoHTML(item){
   if(!item) return '';
   const archivo = item.archivo ? `<a class="btn secondary" href="${item.archivo}" target="_blank" rel="noopener">${icon.open}<span>Ver archivo</span></a>` : '';
   return `<article class="featured-card">
-    <div class="post-media">
-      <div class="post-media-icon">${icon.spark}</div>
-      <div class="post-media-title">
-        <small>Aviso destacado</small>
-        <strong>${item.titulo || 'Aviso'}</strong>
-      </div>
-    </div>
+    ${imagenAvisoHTML(item, true)}
     <div class="post-pad">
       <div class="post-head">
-        <div class="post-avatar"><div class="post-avatar-inner">${areaColor(item.area)}</div></div>
+        <div class="post-avatar"><div class="post-avatar-inner">${areaCorta(item.area)}</div></div>
         <div class="post-meta">
           <strong>${item.area || 'MPS'}</strong>
           <span>${formatearFecha(item.fecha)} · ${item.tipo || 'Aviso'}</span>
@@ -131,13 +201,6 @@ function featuredAvisoHTML(item){
       <div class="post-caption">
         <strong>${item.titulo}</strong>
         <p>${item.mensaje || ''}</p>
-      </div>
-      <div class="post-actions">
-        <div class="post-action-icons">
-          <span class="icon-btn">${icon.pin}</span>
-          <span class="icon-btn">${icon.info}</span>
-          <span class="icon-btn">${icon.bookmark}</span>
-        </div>
       </div>
       <div class="post-tags">
         <span class="compact-chip">${formatearFecha(item.fecha)}</span>
@@ -152,13 +215,14 @@ function tarjetaAviso(item){
   const archivo = item.archivo ? `<a class="btn secondary" href="${item.archivo}" target="_blank" rel="noopener">${icon.open}<span>Ver archivo</span></a>` : '';
   return `<article class="feed-card aviso-card">
     <div class="feed-head">
-      <div class="feed-avatar"><div class="feed-avatar-inner">${areaColor(item.area)}</div></div>
+      <div class="feed-avatar"><div class="feed-avatar-inner">${areaCorta(item.area)}</div></div>
       <div class="feed-meta">
         <strong>${item.area || 'MPS'}</strong>
         <span>${formatearFecha(item.fecha)} · ${item.tipo || 'Aviso'}</span>
       </div>
       <div class="post-menu">${icon.more}</div>
     </div>
+    ${imagenAvisoHTML(item, false)}
     <div class="post-caption">
       <strong>${item.titulo}</strong>
       <p>${item.mensaje || ''}</p>
@@ -170,25 +234,23 @@ function tarjetaAviso(item){
     <div class="btn-row">${archivo}</div>
   </article>`;
 }
+
+let avisosCache = [];
 function renderStories(avisos){
   const cont = qs('#story-filters');
   if(!cont) return;
   const areas = ['Todos', ...new Set(avisos.map(a => a.area || 'MPS'))];
-  cont.innerHTML = areas.map((area, idx) => `
-    <button class="story-chip ${idx===0 ? 'active' : ''}" data-story="${area.toLowerCase()}">
-      <div class="story-bubble"><div class="story-inner">${area === 'Todos' ? icon.spark : `<span style="font-weight:900;font-size:.74rem">${areaColor(area)}</span>`}</div></div>
+  cont.innerHTML = areas.map((area, i) => `
+    <button class="story-chip ${i===0?'active':''}" data-story="${area.toLowerCase()}">
+      <div class="story-bubble"><div class="story-inner">${area==='Todos' ? icon.spark : `<span style="font-weight:900;font-size:.74rem">${areaCorta(area)}</span>`}</div></div>
       <span>${area}</span>
-    </button>
-  `).join('');
-  qsa('.story-chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      qsa('.story-chip').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      filtrarAvisos(btn.dataset.story);
-    });
-  });
+    </button>`).join('');
+  qsa('.story-chip').forEach(btn => btn.addEventListener('click', () => {
+    qsa('.story-chip').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filtrarAvisos(btn.dataset.story);
+  }));
 }
-let avisosCache = [];
 function filtrarAvisos(filtro){
   const destacado = qs('#aviso-destacado');
   const feed = qs('#avisos-feed');
@@ -200,13 +262,18 @@ function filtrarAvisos(filtro){
   if(feed) feed.innerHTML = lista.slice(1).map(tarjetaAviso).join('') || '<div class="info-box"><p>No hay más avisos para esta categoría.</p></div>';
 }
 function renderAvisos(avisos){
-  avisosCache = [...avisos].sort((a,b) => (b.fecha || '').localeCompare(a.fecha || ''));
+  avisosCache = [...avisos]
+    .filter(a => (a.estatus || '').toLowerCase() !== 'oculto')
+    .sort((a,b) => fechaValor(b.fecha) - fechaValor(a.fecha));
   renderStories(avisosCache);
   filtrarAvisos('todos');
 }
+
 function activarNav(){
   const page = document.body.dataset.page;
-  qsa('.bottom-nav a').forEach(a => { if(a.dataset.nav === page) a.classList.add('active'); });
+  qsa('.bottom-nav a').forEach(a => {
+    if(a.dataset.nav === page) a.classList.add('active');
+  });
 }
 function renderStaticIcons(){
   qsa('[data-icon]').forEach(el => {
@@ -214,22 +281,25 @@ function renderStaticIcons(){
     if(icon[key]) el.innerHTML = icon[key];
   });
 }
+
 async function iniciar(){
   renderStaticIcons();
   activarNav();
   try{
     const [documentos, avisos] = await Promise.all([
       cargarJSON('data/documentos.json'),
-      cargarJSON('data/comunicados.json')
+      cargarAvisosCSV()
     ]);
     renderDocumentos(documentos, '#docs-identidad', 'identidad', true);
     renderDocumentos(documentos, '#docs-rh', 'rh', false);
     renderDocumentos(documentos, '#docs-seguridad', 'seguridad', false);
     renderDocumentos(documentos, '#docs-todos', null, false);
+    activarFiltrosDocs(documentos);
     renderAvisos(avisos);
-    activarFiltros(documentos);
   }catch(err){
     console.error(err);
+    const feed = qs('#avisos-feed');
+    if(feed) feed.innerHTML = `<div class="info-box"><h3>No fue posible cargar los avisos</h3><p>${err.message}</p></div>`;
   }
 }
 document.addEventListener('DOMContentLoaded', iniciar);

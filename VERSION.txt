@@ -1,7 +1,12 @@
-Portal del Colaborador MPS - VERSIÓN APP MÓVIL v7
+Portal del Colaborador MPS - VERSIÓN APP MÓVIL v10
 
-Corrección principal:
-- Se eliminó por completo la previsualización con PDF embebido para evitar recuadros negros en celular.
-- Las vistas rápidas de Identidad MPS ahora usan imágenes JPG estáticas compatibles con Android/iPhone.
-- Se agregó cache busting (?v=7) en CSS y JS para forzar que el celular cargue la versión nueva.
-- Se mantiene el botón Abrir para consultar el PDF completo.
+CAMBIO PRINCIPAL:
+El portal ahora lee directamente data/comunicados.csv.
+
+Se eliminó el paso de generar comunicados.json con Python.
+Esto reduce errores y hace mucho más sencilla la publicación de avisos.
+
+Para publicar:
+1. Editar comunicados.csv.
+2. Copiar imágenes a assets/avisos/.
+3. Subir esos archivos a GitHub.

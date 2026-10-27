@@ -419,3 +419,74 @@ button{font:inherit}
 .preview-label{
   z-index: 3 !important;
 }
+
+/* ===== v8: imágenes reales dentro de Avisos ===== */
+.post-media-image{
+  min-height:0 !important;
+  height:auto !important;
+  padding:0 !important;
+  background:#f4f6f8 !important;
+}
+.post-media-image::after{display:none !important}
+.post-media-image img{
+  width:100%;
+  height:auto;
+  max-height:680px;
+  object-fit:contain;
+  background:#f4f6f8;
+  display:block;
+}
+.feed-media{
+  width:calc(100% + 32px);
+  margin:12px -16px 14px;
+  background:#f4f6f8;
+  overflow:hidden;
+}
+.feed-media img{
+  width:100%;
+  height:auto;
+  max-height:560px;
+  object-fit:contain;
+  display:block;
+  background:#f4f6f8;
+}
+
+/* ===== v10: avisos leen directamente comunicados.csv ===== */
+.post-media-image{
+  min-height:0 !important;
+  height:auto !important;
+  padding:0 !important;
+  background:#f5f6f8 !important;
+}
+.post-media-image::after{display:none !important}
+.post-media-image img,
+.feed-media img{
+  width:100%;
+  height:auto;
+  max-height:720px;
+  object-fit:contain;
+  display:block;
+  background:#f5f6f8;
+}
+.feed-media{
+  width:calc(100% + 32px);
+  margin:12px -16px 14px;
+  background:#f5f6f8;
+  overflow:hidden;
+}
+.media-fallback{
+  display:none;
+  min-height:180px;
+  padding:24px;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  text-align:center;
+  gap:8px;
+  color:var(--muted);
+  background:#f7f9fc;
+}
+.media-fallback .icon-svg{width:28px;height:28px;color:var(--navy)}
+.media-fallback strong{color:var(--navy)}
+.media-fallback span{font-size:.82rem}
+.media-error .media-fallback{display:flex}

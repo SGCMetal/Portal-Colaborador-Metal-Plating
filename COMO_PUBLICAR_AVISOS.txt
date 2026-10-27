@@ -1,0 +1,43 @@
+PUBLICAR AVISOS - PORTAL DEL COLABORADOR MPS v10
+
+A partir de esta versión YA NO necesitas:
+- comunicados.json
+- ejecutar Python
+- generar archivos con scripts
+
+EL PORTAL LEE DIRECTAMENTE:
+data/comunicados.csv
+
+PASOS PARA PUBLICAR:
+
+1. Abre data/comunicados.csv con Excel.
+
+2. Cada dato va en su propia columna:
+fecha | titulo | area | tipo | estatus | mensaje | imagen | archivo
+
+3. Si el aviso lleva una imagen:
+   guarda la imagen en:
+   assets/avisos/
+
+   Ejemplo:
+   assets/avisos/concurso_disfraces_2026.png
+
+4. En la columna "imagen" escribe exactamente esa ruta:
+   assets/avisos/concurso_disfraces_2026.png
+
+5. Si además lleva PDF, usa la columna "archivo".
+   Si no, déjala vacía.
+
+6. Guarda el archivo como CSV y cierra Excel.
+
+7. Para GitHub solo necesitas subir:
+   - data/comunicados.csv
+   - las nuevas imágenes de assets/avisos/
+   - cualquier PDF nuevo si aplica
+
+NO necesitas tocar portal.js cada vez.
+NO necesitas generar comunicados.json.
+NO necesitas ejecutar Python.
+
+IMPORTANTE:
+Los nombres de las imágenes deben coincidir exactamente con la ruta del Excel.

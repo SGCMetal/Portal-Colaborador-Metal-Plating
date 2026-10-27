@@ -1,0 +1,31 @@
+AVISOS CON IMAGEN - PORTAL MPS
+
+1) Abre data/comunicados.csv en Excel.
+2) Debe haber una columna llamada exactamente: imagen
+3) En esa columna escribe, por ejemplo:
+   assets/avisos/concurso_disfraces_2026.jpg
+
+4) Copia la imagen física a:
+   assets/avisos/concurso_disfraces_2026.jpg
+
+IMPORTANTE:
+- Si la imagen es PNG, la ruta debe terminar en .png.
+- El nombre debe coincidir exactamente.
+- No escribas C:\Users\...; usa siempre assets/avisos/...
+
+5) Guarda comunicados.csv como CSV.
+6) Cierra Excel.
+7) Haz DOBLE CLIC en ACTUALIZAR_AVISOS.bat
+8) Debe aparecer:
+   OK fila X: imagen encontrada -> assets/avisos/...
+
+Si aparece ADVERTENCIA, la ruta o el nombre no coinciden.
+
+9) Sube a GitHub:
+   data/comunicados.csv
+   data/comunicados.json
+   assets/avisos/las_imagenes.jpg
+   js/portal.js
+   css/estilos.css
+
+10) En celular abre el portal con ?v=9 para evitar caché.

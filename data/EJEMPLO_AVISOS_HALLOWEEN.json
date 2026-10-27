@@ -1,0 +1,22 @@
+[
+  {
+    "fecha": "2026-10-27",
+    "titulo": "Concurso de disfraces MPS",
+    "area": "Personal / RH",
+    "tipo": "Concurso",
+    "estatus": "Vigente",
+    "mensaje": "¡Participa en nuestro concurso de disfraces! Consulta la convocatoria para conocer la dinámica, fecha y premios.",
+    "imagen": "assets/avisos/concurso_disfraces_2026.jpg",
+    "archivo": ""
+  },
+  {
+    "fecha": "2026-10-27",
+    "titulo": "Concurso de calaveritas MPS",
+    "area": "Personal / RH",
+    "tipo": "Concurso",
+    "estatus": "Vigente",
+    "mensaje": "Pon a prueba tu creatividad y participa en nuestro concurso de calaveritas. Consulta la convocatoria completa en la imagen.",
+    "imagen": "assets/avisos/concurso_calaveritas_2026.jpg",
+    "archivo": ""
+  }
+]
