@@ -1,5 +1,6 @@
-fecha,titulo,area,tipo,estatus,mensaje,archivo
-2026-06-26,Bienvenida al Portal del Colaborador MPS,Todo el personal,Aviso general,Vigente,"Este portal concentrará información de calidad, RH, seguridad y comunicados internos para consulta rápida desde celular.",
-2026-06-26,Consulta de Política de Calidad,Todo el personal,Calidad / SGC,Vigente,La Política de Calidad vigente está disponible en la sección Calidad / SGC y también en el acceso rápido de inicio.,docs/calidad/DC-DIR-003_Politica_Calidad.pdf
-2026-06-26,Uso obligatorio de gafete,General,Personal / RH,Informativo,El gafete deberá portarse durante la jornada y reportarse en caso de daño o extravío.,
-2026-10-22,Hola compañeros!,General,Personal / RH,Informativo,Que bueno es por fin vernos, úsame para que te enteres de todo lo que sucede en nuestra empresa,
+﻿fecha,titulo,area,tipo,estatus,mensaje,imagen,archivo
+26/06/2026,Bienvenida al Portal del Colaborador MPS,Todo el personal,Aviso general,Vigente,"Este portal concentrará información de calidad, RH, seguridad y comunicados internos para consulta rápida desde celular.",,
+26/06/2026,Consulta de Política de Calidad,Todo el personal,Calidad / SGC,Vigente,La Política de Calidad vigente está disponible en la sección Calidad / SGC y también en el acceso rápido de inicio.,,docs/calidad/DC-DIR-003_Politica_Calidad.pdf
+26/06/2026,Uso obligatorio de gafete,General,Personal / RH,Informativo,El gafete deberá portarse durante la jornada y reportarse en caso de daño o extravío.,,
+27/10/2026,Concurso de disfraces MPS,Personal / RH,Concurso,Vigente,"¡Participa en nuestro concurso de disfraces! Consulta la convocatoria para conocer la dinámica, fecha y premios.",assets/avisos/concurso_disfraces_2026.png,
+27/10/2026,Concurso de calaveritas MPS,Personal / RH,Concurso,Vigente,Pon a prueba tu creatividad y participa en nuestro concurso de calaveritas. Consulta la convocatoria completa en la imagen.,assets/avisos/concurso_calaveritas_2026.png,

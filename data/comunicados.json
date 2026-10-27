@@ -1,29 +1,52 @@
 [
   {
-    "fecha": "2026-06-26",
+    "fecha": "26/06/2026",
     "titulo": "Bienvenida al Portal del Colaborador MPS",
     "area": "Todo el personal",
     "tipo": "Aviso general",
     "estatus": "Vigente",
     "mensaje": "Este portal concentrará información de calidad, RH, seguridad y comunicados internos para consulta rápida desde celular.",
+    "imagen": "",
     "archivo": ""
   },
   {
-    "fecha": "2026-06-26",
+    "fecha": "26/06/2026",
     "titulo": "Consulta de Política de Calidad",
     "area": "Todo el personal",
     "tipo": "Calidad / SGC",
     "estatus": "Vigente",
     "mensaje": "La Política de Calidad vigente está disponible en la sección Calidad / SGC y también en el acceso rápido de inicio.",
+    "imagen": "",
     "archivo": "docs/calidad/DC-DIR-003_Politica_Calidad.pdf"
   },
   {
-    "fecha": "2026-06-26",
+    "fecha": "26/06/2026",
     "titulo": "Uso obligatorio de gafete",
     "area": "General",
     "tipo": "Personal / RH",
     "estatus": "Informativo",
     "mensaje": "El gafete deberá portarse durante la jornada y reportarse en caso de daño o extravío.",
+    "imagen": "",
+    "archivo": ""
+  },
+  {
+    "fecha": "27/10/2026",
+    "titulo": "Concurso de disfraces MPS",
+    "area": "Personal / RH",
+    "tipo": "Concurso",
+    "estatus": "Vigente",
+    "mensaje": "¡Participa en nuestro concurso de disfraces! Consulta la convocatoria para conocer la dinámica, fecha y premios.",
+    "imagen": "assets/avisos/concurso_disfraces_2026.png",
+    "archivo": ""
+  },
+  {
+    "fecha": "27/10/2026",
+    "titulo": "Concurso de calaveritas MPS",
+    "area": "Personal / RH",
+    "tipo": "Concurso",
+    "estatus": "Vigente",
+    "mensaje": "Pon a prueba tu creatividad y participa en nuestro concurso de calaveritas. Consulta la convocatoria completa en la imagen.",
+    "imagen": "assets/avisos/concurso_calaveritas_2026.png",
     "archivo": ""
   }
 ]
