@@ -1,0 +1,3 @@
+Coloca aquí imágenes JPG/PNG de avisos.
+Ejemplo: concurso_disfraces_2026.jpg
+Ruta a usar en comunicados.json: assets/avisos/concurso_disfraces_2026.jpg
